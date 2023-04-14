@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import MessageBox from "./components/Message Box/MessageBox";
+import HeaderSearch from "./components/User List/HeaderSearch";
+import UserList from "./components/User List/UserList";
 
 function App() {
+  const [pickedUser, setPikcedUser] = useState(
+    localStorage.getItem("theme") || "light"
+  );
+  const [theme, setTheme] = useState("light");
+
+  const choosenUser = (user) => {
+    setPikcedUser(user);
+  };
+
+  const onClickChangeTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    document.body.className = theme;
+  }, [theme]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={onClickChangeTheme}>theme</button>
+      <div className={`app_box ${theme}`}>
+        <HeaderSearch theme={theme} />
+        <UserList choosenUser={choosenUser} />
+        <MessageBox pickedUser={pickedUser} />
+      </div>
     </div>
   );
 }

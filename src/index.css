@@ -1,13 +1,148 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  z-index: 999;
+}
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+.light {
+  background-color: #fff;
+  color: #333;
+}
+code {
+  font-family: "Titillium Web", sans-serif;
+}
+.app_box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+.user_list_box {
+  background-color: #fff;
+  width: 25%;
+  height: 100vh;
+  /* padding: 20px 30px 0px; */
+}
+.contact-box {
+  width: 100%;
+  height: 60px;
+}
+.contact-box:hover {
+  background-color: #517da2;
+  color: #fff;
+  transform: matrix(1.1);
+}
+.user_list_user_box {
+  width: 90%;
+  height: 100%;
+  transition: 0.3s;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.152);
+  display: flex;
+  margin: 0px 20px;
+  /* margin-right: 100px; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.user_list_user {
+  width: 100%;
+  height: 100%;
+  margin-left: 15px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: larger;
+}
+.user_avatar_box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.user_avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 30px;
+}
+.search_input_box {
+  background-color: #517da2;
+  width: 99.7%;
+  height: 10%;
+  margin-top: -25px;
+}
+.search_input_box p {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messages_box {
+  background-color: #fff;
+  width: 75vw;
+  height: 100%;
+}
+.messages_list_box {
+  padding: 1px 30px 0px;
+  /* position: fixed; */
+}
+.each_message_box {
+  border-bottom: 2px solid #517da2;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 10px 20px;
+  width: 30%;
+  /* height: 40px; */
+  background-color: #fff;
+  font-size: 20px;
+}
+.each_message {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.user_header_box {
+  background-color: #517da2;
+  height: 10%;
+}
+.user_header_name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0px 50px;
+  color: #fff;
+  font-size: larger;
+  font-weight: 500;
+}
+.input_box {
+  background-color: #fff;
+  height: 8%;
+  display: flex;
+}
+.input_box input {
+  padding: 1px 20px;
+  width: 90%;
+  height: 90%;
+  font-size: 17px;
+}
+.input_box button {
+  width: 10%;
+  height: 100%;
+  border: 2px solid #517da2;
+  color: #517da2;
+  background-color: #fff;
+  font-size: 17px;
+  transition: 0.3s;
+}
+.input_box button:hover {
+  color: #fff;
+  background-color: #517da2;
+}
+.messages_list_box {
+  /* background-color: rgb(253, 253, 253); */
+  background-image: url(/Users/admin/Desktop/Chat.Telegram/chat/public/images/road-forest4k.jpeg);
+  background-size: cover;
+  height: 82%;
 }
